@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-spa@8!nbxopgeees&spp__*bsfq!+h4*(%(#-(4^d_4ir-*$u%"
+SECRET_KEY = "django-insecure-6neq52l=s9!*i0ugbazd5l+gnazpp%sai9o($(6advzaj__#ln"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "auctionApp",
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,4 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+AUTH_USER_MODEL="auctionApp.User"
