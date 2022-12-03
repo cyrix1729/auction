@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 from .models import Question
+from .models import Item
+from .models import User
 
 def index(request):
     return HttpResponse("Auction App.")
