@@ -2,8 +2,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # # Inherits from django's AbstractUser model
-class User(AbstractUser): 
-    # unique email 
+class User(AbstractUser):
+    # unique email
     email = models.EmailField(unique = True)
     # unique Username
     username = models.CharField(max_length = 50, blank = True, null = True, unique = True)
@@ -12,7 +12,7 @@ class User(AbstractUser):
     # Profile picture
     image = models.ImageField(null=True)
 
-    
+
 
     def __str__(self):
         return self.username
@@ -34,15 +34,15 @@ class Item(models.Model):
     image = models.ImageField()
     #seller of item
     seller = models.ForeignKey(User, on_delete = models.CASCADE )
-    
-    
-    
-    def __str__ (self): 
-        return self.name 
-    
+
+
+
+    def __str__ (self):
+        return self.name
+
     def newBid(self, value):
         cur_price = value
-        
+
 # class Listings(models.Model):
 
 class Question(models.Model):
@@ -51,8 +51,9 @@ class Question(models.Model):
     asker = models.ForeignKey(User, on_delete= models.SET('Deleted User'))
     #item the question is for
     item = models.ForeignKey(Item, on_delete = models.CASCADE )
-    
 
-    
- 
-    
+    def __str__(self):
+        return self.question
+
+    def newAnswer(self, value):
+        answer = value
